@@ -21,3 +21,14 @@
   align-items: center;
   justify-content: center;
 }
+
+.title {
+  font-size: 4rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}

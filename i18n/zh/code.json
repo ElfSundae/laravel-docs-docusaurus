@@ -1,0 +1,26 @@
+{
+  "Get Started": {
+    "message": "开始使用"
+  },
+  "Write code for the joy of it.": {
+    "message": "编码乐在其中。"
+  },
+  "Laravel values beauty. We love clean code just as much as you do. Simple, elegant syntax puts amazing functionality at your fingertips. Every feature has been thoughtfully considered to provide a wonderful developer experience.": {
+    "message": "Laravel 重视美感。我们和你一样喜欢干净的代码。简洁、优雅的语法让令人惊叹的功能触手可及。每项功能都经过深思熟虑，旨在为开发者提供绝佳体验。"
+  },
+  "One Framework, Many Flavors.": {
+    "message": "一个框架，多种风格。"
+  },
+  "Build robust, full-stack applications in PHP using Laravel and Livewire. Love JavaScript? Build a monolithic React or Vue driven frontend by pairing Laravel with Inertia.": {
+    "message": "使用 Laravel 和 Livewire 在 PHP 中构建健壮的全栈应用程序。喜欢 JavaScript？使用 Laravel 和 Inertia 构建完整的 React 或 Vue 驱动的前端。"
+  },
+  "Or, let Laravel serve as a robust backend API for your Next.js application, mobile application, or other frontend. Either way, our starter kits will have you productive in minutes.": {
+    "message": "或者，让 Laravel 为你的 Next.js 应用、移动 App 或其他前端程序提供强大的后端接口。无论哪种方式，我们的入门套件都能让你分分钟富有成效。"
+  },
+  "Everything you need to be amazing.": {
+    "message": "你需要的一切，都将让你惊艳。"
+  },
+  "Out of the box, Laravel has elegant solutions for the common features needed by all modern web applications. It's time to start building amazing applications and stop wasting time searching for packages and reinventing the wheel.": {
+    "message": "Laravel 开箱即用得为所有现代 Web 应用程序所需的常见功能提供了优雅的解决方案。停止浪费时间搜索软件包或重新发明轮子，是时候开始构建令人惊叹的应用程序了。"
+  }
+}

@@ -10,12 +10,12 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Laravel - The PHP Framework For Web Artisans',
+  tagline: 'Laravel is a web application framework with expressive, elegant syntax. We’ve already laid the foundation — freeing you to create without sweating the small things.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://laravel.0x123.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -28,12 +28,37 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
+  trailingSlash: false,
+
+  markdown: {
+    format: 'detect',
+  },
+
+  titleDelimiter: '-',
+
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'apple-touch-icon',
+        sizes: '150x150',
+        href: 'img/apple-touch-icon.png',
+      },
+    },
+  ],
+
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'zh'],
+    localeConfigs: {
+      zh: {
+        label: '简体中文',
+        htmlLang: 'zh-CN',
+      },
+    },
   },
 
   presets: [
@@ -45,8 +70,19 @@ const config = {
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: ({ version, docPath }) => {
+            return `https://github.com/laravel/docs/edit/${version}/${docPath}`;
+          },
+          versions: {
+            current: {
+              label: 'Master',
+              path: 'master',
+            },
+            // '11.x': {
+            //   banner: 'none',
+            //   path: '11.x',
+            // },
+          },
         },
         blog: false,
         theme: {
@@ -60,11 +96,11 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'Laravel',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Laravel Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -75,8 +111,30 @@ const config = {
             label: 'Tutorial',
           },
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
+            label: 'Documentation',
+            to: '/docs/installation',
+            position: 'left',
+          },
+          {
+            label: 'API',
+            to: 'pathname:///api/',
+            position: 'left',
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+          },
+          {
+            type: 'localeDropdown',
+            position: 'right',
+          },
+          {
+            href: 'https://github.com/laravel',
+            className: 'header-github-link',
+            position: 'right',
+          },
+          {
+            type: 'search',
             position: 'right',
           },
         ],
@@ -129,6 +187,9 @@ const config = {
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
+      },
+      colorMode: {
+        respectPrefersColorScheme: true,
       },
     }),
 };
