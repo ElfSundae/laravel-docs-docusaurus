@@ -6,7 +6,6 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
-    "build:fast": "cross-env BUILD_FAST=true docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -17,6 +16,7 @@
   "dependencies": {
     "@docusaurus/core": "^3.6.2",
     "@docusaurus/faster": "^3.6.2",
+    "@docusaurus/plugin-client-redirects": "^3.6.2",
     "@docusaurus/preset-classic": "^3.6.2",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",

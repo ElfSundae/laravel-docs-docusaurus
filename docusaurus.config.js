@@ -10,7 +10,7 @@ import ConfigLocalized from './docusaurus.config.localized.json';
 
 // By default, we use Docusaurus Faster
 // DOCUSAURUS_SLOWER=true is useful for benchmarking faster against slower
-// hyperfine --prepare 'yarn clear' --runs 3 'DOCUSAURUS_SLOWER=true yarn build:fast' 'yarn build:fast'
+// hyperfine --prepare 'yarn clear' --runs 3 'DOCUSAURUS_SLOWER=true yarn build' 'yarn build'
 const isSlower = process.env.DOCUSAURUS_SLOWER === 'true';
 if (isSlower) {
   console.log('🐢 Using slower Docusaurus build');
@@ -145,7 +145,7 @@ export default async function createConfigAsync() {
             // },
             {
               label: 'Documentation',
-              to: '/docs/installation',
+              to: '/docs',
               position: 'left',
             },
             {
@@ -212,5 +212,19 @@ export default async function createConfigAsync() {
           respectPrefersColorScheme: true,
         },
       }),
+
+    plugins: [
+      [
+        '@docusaurus/plugin-client-redirects',
+        {
+          redirects: [
+            {
+              from: '/docs',
+              to: '/docs/installation',
+            },
+          ],
+        }
+      ],
+    ],
   };
 }
