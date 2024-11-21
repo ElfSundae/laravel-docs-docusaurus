@@ -6,13 +6,30 @@
 
 import { themes as prismThemes } from 'prism-react-renderer';
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+import ConfigLocalized from './docusaurus.config.localized.json';
+
+const defaultLocale = 'en';
+
+function getLocalizedConfigValue(key) {
+  const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE ?? defaultLocale;
+  const values = ConfigLocalized[key];
+  if (!values) {
+    throw new Error(`Localized config key=${key} not found`);
+  }
+  const value = values[currentLocale] ?? values[defaultLocale];
+  if (!value) {
+    throw new Error(
+      `Localized value for config key=${key} not found for both currentLocale=${currentLocale} or defaultLocale=${defaultLocale}`,
+    );
+  }
+  return value;
+}
 
 export default async function createConfigAsync() {
   /** @type {import('@docusaurus/types').Config} */
   return {
-    title: 'Laravel - The PHP Framework For Web Artisans',
-    tagline: 'Laravel is a web application framework with expressive, elegant syntax. We’ve already laid the foundation — freeing you to create without sweating the small things.',
+    title: getLocalizedConfigValue('title'),
+    tagline: getLocalizedConfigValue('tagline'),
     favicon: 'img/favicon.ico',
 
     // Set the production url of your site here

@@ -6,19 +6,27 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
-import Translate from '@docusaurus/Translate';
+import Translate, { translate } from '@docusaurus/Translate';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
-        <Heading as="h1" className={clsx('hero__title', styles.title)}>
-          The PHP Framework
-          <br></br>
-          <span className='text--danger'>for Web Artisans</span>
+        <Heading as="h1" className={clsx('hero__title', styles.heroTitle)}>
+          <span
+            className={styles.heroTitleTextHtml}
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: translate({
+                id: 'homepage.hero.title',
+                message: 'The PHP Framework<br><b>for Web Artisans</b>',
+                description: 'Home page hero title, can contain simple html tags',
+              }),
+            }}
+          />
         </Heading>
-        <p className={clsx('hero__subtitle margin-vert--lg', styles.subtitle)}>{siteConfig.tagline}</p>
+        <p className={clsx('hero__subtitle margin-vert--lg', styles.heroSubtitle)}>{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
             className="button button--success button--lg"
@@ -35,7 +43,6 @@ export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={siteConfig.title}
       description={siteConfig.tagline}>
       <HomepageHeader />
       <main>

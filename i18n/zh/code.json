@@ -22,5 +22,9 @@
   },
   "Out of the box, Laravel has elegant solutions for the common features needed by all modern web applications. It's time to start building amazing applications and stop wasting time searching for packages and reinventing the wheel.": {
     "message": "Laravel 开箱即用得为所有现代 Web 应用程序所需的常见功能提供了优雅的解决方案。停止浪费时间搜索软件包或重新发明轮子，是时候开始构建令人惊叹的应用程序了。"
+  },
+  "homepage.hero.title": {
+    "message": "面向 <b>Web 工匠</b> 的<br>PHP 框架",
+    "description": "Home page hero title, can contain simple html tags"
   }
 }

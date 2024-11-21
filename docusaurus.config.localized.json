@@ -1,0 +1,10 @@
+{
+  "title": {
+    "en": "Laravel - The PHP Framework For Web Artisans",
+    "zh": "Laravel - 面向 Web 工匠的 PHP 框架"
+  },
+  "tagline": {
+    "en": "Laravel is a web application framework with expressive, elegant syntax. We’ve already laid the foundation — freeing you to create without sweating the small things.",
+    "zh": "Laravel 是一个具有富于表现力、优雅语法的 Web 应用程序框架。我们已经奠定了基础--让你无需为细枝末节操心就能尽情创造。"
+  }
+}
