@@ -145,7 +145,7 @@ export default async function createConfigAsync() {
             // },
             {
               label: 'Documentation',
-              to: '/docs',
+              to: '/docs/installation',
               position: 'left',
             },
             {
