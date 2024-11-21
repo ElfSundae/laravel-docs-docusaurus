@@ -72,8 +72,11 @@ export default async function createConfigAsync() {
       defaultLocale: 'en',
       locales: ['en', 'zh'],
       localeConfigs: {
+        en: {
+          label: '🇺🇸 English',
+        },
         zh: {
-          label: '简体中文',
+          label: '🇨🇳 简体中文',
           htmlLang: 'zh-CN',
         },
       },
