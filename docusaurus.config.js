@@ -8,6 +8,14 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 import ConfigLocalized from './docusaurus.config.localized.json';
 
+// By default, we use Docusaurus Faster
+// DOCUSAURUS_SLOWER=true is useful for benchmarking faster against slower
+// hyperfine --prepare 'yarn clear:website' --runs 3 'DOCUSAURUS_SLOWER=true yarn build:website:fast' 'yarn build:website:fast'
+const isSlower = process.env.DOCUSAURUS_SLOWER === 'true';
+if (isSlower) {
+  console.log('🐢 Using slower Docusaurus build');
+}
+
 const defaultLocale = 'en';
 
 function getLocalizedConfigValue(key) {
@@ -48,11 +56,11 @@ export default async function createConfigAsync() {
 
     trailingSlash: false,
 
-    markdown: {
-      format: 'detect',
-    },
-
     titleDelimiter: '-',
+
+    future: {
+      experimental_faster: !isSlower,
+    },
 
     headTags: [
       {
@@ -80,6 +88,10 @@ export default async function createConfigAsync() {
           htmlLang: 'zh-CN',
         },
       },
+    },
+
+    markdown: {
+      format: 'detect',
     },
 
     presets: [
