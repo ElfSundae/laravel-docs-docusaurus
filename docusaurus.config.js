@@ -10,7 +10,7 @@ import ConfigLocalized from './docusaurus.config.localized.json';
 
 // By default, we use Docusaurus Faster
 // DOCUSAURUS_SLOWER=true is useful for benchmarking faster against slower
-// hyperfine --prepare 'yarn clear:website' --runs 3 'DOCUSAURUS_SLOWER=true yarn build:website:fast' 'yarn build:website:fast'
+// hyperfine --prepare 'yarn clear' --runs 3 'DOCUSAURUS_SLOWER=true yarn build:fast' 'yarn build:fast'
 const isSlower = process.env.DOCUSAURUS_SLOWER === 'true';
 if (isSlower) {
   console.log('🐢 Using slower Docusaurus build');
