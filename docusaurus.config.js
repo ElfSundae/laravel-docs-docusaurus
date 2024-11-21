@@ -107,10 +107,10 @@ export default async function createConfigAsync() {
               return `https://github.com/laravel/docs/edit/${version}/${docPath}`;
             },
             versions: {
-              current: {
-                label: 'Master',
-                path: 'master',
-              },
+              // current: {
+              //   label: 'Master',
+              //   path: 'master',
+              // },
               // '11.x': {
               //   banner: 'none',
               //   path: '11.x',
@@ -137,12 +137,12 @@ export default async function createConfigAsync() {
             src: 'img/logo.svg',
           },
           items: [
-            {
-              type: 'docSidebar',
-              sidebarId: 'tutorialSidebar',
-              position: 'left',
-              label: 'Tutorial',
-            },
+            // {
+            //   type: 'docSidebar',
+            //   sidebarId: 'tutorialSidebar',
+            //   position: 'left',
+            //   label: 'Tutorial',
+            // },
             {
               label: 'Documentation',
               to: '/docs/installation',
@@ -176,15 +176,6 @@ export default async function createConfigAsync() {
           style: 'dark',
           links: [
             {
-              title: 'Docs',
-              items: [
-                {
-                  label: 'Tutorial',
-                  to: '/docs/intro',
-                },
-              ],
-            },
-            {
               title: 'Community',
               items: [
                 {
@@ -204,10 +195,6 @@ export default async function createConfigAsync() {
             {
               title: 'More',
               items: [
-                {
-                  label: 'Blog',
-                  to: '/blog',
-                },
                 {
                   label: 'GitHub',
                   href: 'https://github.com/facebook/docusaurus',
